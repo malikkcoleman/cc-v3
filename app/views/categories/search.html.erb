@@ -1,0 +1,16 @@
+<p>
+  Found <%= pluralize(@products.count, 'Product') %> when searching for: <%= params[:q] %>
+</p>
+<div class="section-pokemon_cards">
+  <div class="container">
+    <div class="card-flexbox">
+      <% @products.each do |product| %>
+        <%= product.name%>
+
+      <% end %>
+
+    </div>
+
+  </div>
+</div>
+</div>

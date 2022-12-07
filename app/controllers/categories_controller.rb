@@ -8,6 +8,11 @@ class CategoriesController < ApplicationController
     @product = Product.where(id: params[:id])
   end
 
+  def search
+    # wildcard_search = "%#{params[:keywords]}%"
+    @products = Product.where("name LIKE ?", "%" + params[:q] + "%")
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
