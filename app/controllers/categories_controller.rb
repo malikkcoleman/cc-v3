@@ -7,4 +7,12 @@ class CategoriesController < ApplicationController
   def show
     @product = Product.where(id: params[:id])
   end
+
+  private
+
+  # Use callbacks to share common setup or constraints between actions.
+  # Only allow a list of trusted parameters through.
+  def product_params
+    params.require(:product).permit(:name, :description, :qty, :search)
+  end
 end
