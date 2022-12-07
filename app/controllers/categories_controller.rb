@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   def index
     @categories = Category.all
-    @products = Product.all
+    @products = Product.all.page(params[:page])
   end
 
   def show

@@ -1,6 +1,6 @@
 
 <link rel="stylesheet" href="/Users/colemancapsule/Documents/RRCWEBD3008/collectors_club_v3/app/assets/stylesheets/shop.css">
-<h3 style="text-align: center">Categories</h3>
+<h2 style="text-align: center">Categories</h2>
 <div class="container text-center">
   <div class="row">
   <% @categories.each do |category| %>
@@ -20,7 +20,7 @@
 
 
 
-<div class="section-shop">
+
   <div class="container">
     <div class="d-flex flex-wrap justify-content-between">
       <% @products.each do |product| %>
@@ -37,7 +37,15 @@
       <% end %>
 
     </div>
+  </div>
+
+  <div class='container d-flex justify-content-center'>
+  <div class='mb-5'>
+  <%= paginate @products%>
+  </div>
+
 
   </div>
-</div>
+
+
 
