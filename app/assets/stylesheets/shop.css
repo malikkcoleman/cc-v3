@@ -1,0 +1,19 @@
+.section-shop{
+  padding: 80px 60px;
+
+}
+
+.container{
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1160;
+}
+
+.card-flexbox{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+

@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "home#index"
   get "/shop", to: 'categories#index'
+  get "/shop/:id", to: 'categories#show'
 end
