@@ -74,6 +74,10 @@ gem 'cancancan'
 gem 'draper'
 gem 'pundit'
 
+# Rubocoo
+gem 'rubocop'
+gem 'rubocop-rails'
+
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"

@@ -18,16 +18,17 @@
 #   })
 # end
 
-require 'csv'
-csv_text = File.read('/Users/colemancapsule/Documents/RRCWEBD3008/collectors_club_v3/db/csv/products.csv')
-puts csv_text
-CSV.foreach('/Users/colemancapsule/Documents/RRCWEBD3008/collectors_club_v3/db/csv/products.csv', headers: true) do |row|
+require "csv"
+csv_text = File.read("/Users/colemancapsule/Documents/RRCWEBD3008/collectors_club_v3/db/csv/products.csv")
+Rails.logger.debug csv_text
+CSV.foreach("/Users/colemancapsule/Documents/RRCWEBD3008/collectors_club_v3/db/csv/products.csv",
+            headers: true) do |row|
   Product.create({
-    name: row["name"],
-    price: row["price"],
-    description: row["description"],
-    image: row["image"],
-    qty: row["qty"],
-    category_id: row["category_id"]
-  })
+                   name:        row["name"],
+                   price:       row["price"],
+                   description: row["description"],
+                   image:       row["image"],
+                   qty:         row["qty"],
+                   category_id: row["category_id"]
+                 })
 end
