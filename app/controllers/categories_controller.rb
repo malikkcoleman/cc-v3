@@ -2,6 +2,9 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all
     @products = Product.all.page(params[:page])
+    # session[:visit_count] ||= 0
+    # session[:visit_count] += 1
+    # @visit_count = session[:visit_count]
   end
 
   def show

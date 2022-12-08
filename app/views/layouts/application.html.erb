@@ -12,7 +12,9 @@
 
   <body>
   <%= render 'layouts/navbar' %>
-
+  <p>
+  You have visited this page <%= pluralize visit_count, 'time' %>
+</p>
    <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
     <%= yield %>
