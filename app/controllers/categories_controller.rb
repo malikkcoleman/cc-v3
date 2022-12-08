@@ -10,7 +10,14 @@ class CategoriesController < ApplicationController
 
   def search
     # wildcard_search = "%#{params[:keywords]}%"
-    @products = Product.where("name LIKE ?", "%" + params[:q] + "%")
+    if params[:ccs].empty?
+      # @products = Product.where(category_id: params[:ccs]).where("name LIKE ? OR description LIKE ?", "%" + params[:q] + "%", "%" + params[:q] + "%")
+      @products = Product.where("name LIKE ?", "%" + params[:q] + "%")
+    else
+      # @products = Product.where("name LIKE ?", "%" + params[:q] + "%")
+      @products = Product.where(category_id: params[:ccs]).where("name LIKE ? OR description LIKE ?", "%" + params[:q] + "%", "%" + params[:q] + "%")
+    end
+    # @products = Product.where("name LIKE ?", "%" + params[:q] + "%")
   end
 
   private
