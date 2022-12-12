@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get "/shop/:id", to: "categories#show"
   get "product/:id", to: "products#index"
   get "/search", to: "categories#search"
+  get "/order", to: "orders#index"
 
   resources :cart, only: %i[create destroy]
+  resources :order, only: %i[create]
 end
