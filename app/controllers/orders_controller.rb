@@ -7,6 +7,10 @@ class OrdersController < ApplicationController
     @order.total = params[:total]
     @order.save
     session[:shopping_cart].clear
+
+    @customer = Customer.new
+    @customer.name = params[:name]
+    @customer.province = params[:province]
     redirect_to "/shop"
   end
 
