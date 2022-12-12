@@ -13,6 +13,7 @@ class OrdersController < ApplicationController
     @customer.province = params[:province]
     @customer.order_id = @order.id
     @customer.save
+    flash[:notice] = "Order #{@order.id} Completed. Confirmation email in 2-3 days."
     redirect_to "/shop"
   end
 
