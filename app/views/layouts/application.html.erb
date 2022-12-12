@@ -15,7 +15,8 @@
 
     <ul>
       <li>
-        <%= link_to "cart", "/shop"%>
+        Proceed to Checkout
+        <%= link_to "cart", "/order"%>
         <% if cart.present? %>
           <sup><%= cart.size %></sup>
           <ul>

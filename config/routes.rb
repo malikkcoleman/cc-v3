@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get "/search", to: "categories#search"
   get "/order", to: "orders#index"
 
+  post "order", to: "orders#create", as: "create_order"
+
   resources :cart, only: %i[create destroy]
-  resources :order, only: %i[create]
+  resources :order, only: %i[create destroy]
 end

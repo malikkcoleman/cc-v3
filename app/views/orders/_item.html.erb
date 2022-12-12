@@ -1,0 +1,26 @@
+<ul>
+      <li>
+        <%= link_to "cart", "/shop"%>
+        <% if cart.present? %>
+          <% total = 0%>
+          <sup><%= cart.size %></sup>
+          <ul>
+            <% cart.each do |p| %>
+              <li>
+                <%= p.name%> ----- <%= p.price%> -----<%= button_to cart_path(p.id), method: :delete do%> Remove from cart - <% end %>
+                <% total = total + p.price%>
+              </li>
+            <% end %>
+          Total is <%= total %>
+          </ul>
+        <% end %>
+    </ul>
+<h2>Information</h2>
+
+<%= form_with url: create_order_path, local: true, method:  :post do |f| %>
+    Full Name: <%= f.text_field :name %>
+    Province: <%= f.text_field :province %>
+    <%= hidden_field_tag(:total, total) %>
+    Total: <%= total %>
+    <%= f.submit 'BUY' %>
+<% end %>

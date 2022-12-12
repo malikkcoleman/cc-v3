@@ -1,0 +1,6 @@
+<%= form_for(order_url) do |f|%>
+  Full Name: <%= f.text_field :name %>
+  Province: <%= f.text_field :province %>
+  Total: <%= f.hidden_field :total %>
+  <%= f.submit %>
+<% end %>
