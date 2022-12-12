@@ -19,8 +19,9 @@
 
 <%= form_with url: create_order_path, local: true, method:  :post do |f| %>
     Full Name: <%= f.text_field :name %>
-    Province: <%= f.text_field :province %>
+    Province: <%= f.select(:province, ['AB', 'BC', 'MB', 'NB', 'NL', 'NT', 'NS', 'NU', 'ON', 'PE', 'QC', 'SK', 'YT' ]) %>
     <%= hidden_field_tag(:total, total) %>
+    <p>Taxes calculated after purchase</p>
     Total: <%= total %>
     <%= f.submit 'BUY' %>
 <% end %>
