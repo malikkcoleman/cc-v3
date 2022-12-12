@@ -1,32 +1,8 @@
 <div class='container'>
-<h3>Search By Keyword: </h3>
-<form action="/search">
-  <input name="q" type="text" placeholder="Search">
-  <button type="submit">Search</button>
-</form>
+<%= render "searchbar"%>
 <p>
   Found <%= pluralize(@products.count, 'Product') %> when searching for: <%= params[:q] %>
 </p>
-<div class="section-pokemon_cards">
-  <div class="container">
-    <div class="d-flex flex-wrap justify-content-between">
-      <% @products.each do |product| %>
-
-        <div class="card mb-5" style="width: 18rem;">
-          <img class="card-img-top" src="<%= product.image%>" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title"><%= product.name%></h5>
-            <p class="card-text"><%= product.description%></p>
-            <a href="/shop/<%= product.id%>" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-
-
-      <% end %>
-
-    </div>
-
-  </div>
-</div>
+<%= render "product"%>
 </div>
 </div>

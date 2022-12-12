@@ -1,13 +1,32 @@
-<p>
-  <%= product.image alt='product_image'%>
-</p>
 
-<p>
-  <%= product.name%>
-</p>
-<p>
-</p>
-<p>
-</p>
-<p>
-</p>
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-between">
+      <% @products.each do |product| %>
+
+        <div class="card mb-5" style="width: 18rem;">
+          <img class="card-img-top" src="<%= product.image%>" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= product.name%></h5>
+            <p class="card-text"><%= product.description%></p>
+            <a href="/shop/<%= product.id%>" class="btn btn-primary">Go somewhere</a>
+
+
+
+
+            <% if cart.include?(product) %>
+              <%= button_to cart_path(product), method: :delete do%>
+              Remove from cart -
+              <% end %>
+          <% else %>
+              <%= form_with url: cart_index_path, method: :post do%>
+                <%= hidden_field_tag(:id, product.id) %>
+                <%= button_tag 'Add to Cart'%>
+              <% end %>
+            <% end%>
+          </div>
+        </div>
+
+      <% end %>
+
+    </div>
+  </div>

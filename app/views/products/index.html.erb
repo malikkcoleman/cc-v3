@@ -1,11 +1,7 @@
 <link rel="stylesheet" href="/Users/colemancapsule/Documents/RRCWEBD3008/collectors_club_v3/app/assets/stylesheets/shop.css">
 <div class='container'>
 
-<h3>Search By Keyword: </h3>
-<form action="/search">
-  <input name="q" type="text" placeholder="Search">
-  <button type="submit">Search</button>
-</form>
+<%= render "/categories/searchbar"%>
 
 <div class='container'>
 <h2 style="text-align: center">Categories</h2>
@@ -26,25 +22,6 @@
 
 <p>Current Category: <%= @category.name%></p>
 
-<div class="section-shop">
-  <div class="container">
-    <div class="d-flex flex-wrap justify-content-between">
-      <% @products.each do |product| %>
-
-        <div class="card mb-5" style="width: 18rem;">
-          <img class="card-img-top" src="<%= product.image%>" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title"><%= product.name%></h5>
-            <p class="card-text"><%= product.description%></p>
-            <a href="/shop/<%= product.id%>" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-
-      <% end %>
-
-    </div>
-
-  </div>
-</div>
+<%= render "/categories/product"%>
 </div>
 </div>

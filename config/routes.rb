@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'orders/create'
+  get 'orders/index'
+  get 'orders/show'
   devise_for :users
   get 'home/index'
   devise_for :admin_users, ActiveAdmin::Devise.config

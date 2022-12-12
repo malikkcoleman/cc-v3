@@ -18,5 +18,6 @@ class CartController < ApplicationController
     flash[:notice] = "- #{product.name} removed from cart."
 
     redirect_to "/shop"
+
   end
 end

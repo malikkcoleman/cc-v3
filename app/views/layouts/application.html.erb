@@ -13,6 +13,20 @@
   <body>
   <%= render 'layouts/navbar' %>
 
+    <ul>
+      <li>
+        <%= link_to "cart", "/shop"%>
+        <% if cart.present? %>
+          <sup><%= cart.size %></sup>
+          <ul>
+            <% cart.each do |p| %>
+              <li>
+                <%= p.name%>
+              </li>
+            <% end %>
+          </ul>
+        <% end %>
+    </ul>
   <% if flash[:notice] %>
     <p><%= flash[:notice]%></p>
   <% end %>
