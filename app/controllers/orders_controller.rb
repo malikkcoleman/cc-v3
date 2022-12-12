@@ -11,6 +11,7 @@ class OrdersController < ApplicationController
     @customer = Customer.new
     @customer.name = params[:name]
     @customer.province = params[:province]
+    @customer.save
     redirect_to "/shop"
   end
 
