@@ -18,7 +18,9 @@ class CategoriesController < ApplicationController
       @products = Product.where("name LIKE ?", "%" + params[:q] + "%")
     else
       # @products = Product.where("name LIKE ?", "%" + params[:q] + "%")
-      @products = Product.where(category_id: params[:ccs]).where("name LIKE ? OR description LIKE ?", "%" + params[:q] + "%", "%" + params[:q] + "%")
+      @products = Product.where(category_id: params[:ccs]).where(
+        "name LIKE ? OR description LIKE ?", "%" + params[:q] + "%", "%" + params[:q] + "%"
+      )
     end
     # @products = Product.where("name LIKE ?", "%" + params[:q] + "%")
   end

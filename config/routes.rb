@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'orders/create'
-  get 'orders/index'
-  get 'orders/show'
+  get "orders/create"
+  get "orders/index"
+  get "orders/show"
   devise_for :users
-  get 'home/index'
+  get "home/index"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
