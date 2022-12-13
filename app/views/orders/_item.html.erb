@@ -1,18 +1,23 @@
-<ul>
+<ul style="list-style-type: none;">
       <li>
-        <%= link_to "cart", "/shop"%>
+
         <% if cart.present? %>
           <% total = 0%>
           <sup><%= cart.size %></sup>
-          <ul>
+          <ul style="list-style-type: none;">
             <% cart.each do |p| %>
               <li>
-                <%= p.name%> ----- <%= p.price%> -----<%= button_to cart_path(p.id), method: :delete do%> Remove from cart - <% end %>
+                <%= p.name%> || <%= p.price%> || <%= button_to cart_path(p.id), method: :delete, class: "btn btn-primary mt-2" do%> Remove from cart - <% end %>
+                ------------------
                 <% total = total + p.price%>
               </li>
             <% end %>
           Total is <%= total %> + taxes
           </ul>
+
+          <% else %>
+          <p>Cart is empty.</p>
+
         <% end %>
     </ul>
 <h2>Information</h2>

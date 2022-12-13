@@ -8,19 +8,20 @@
           <div class="card-body">
             <h5 class="card-title"><%= product.name%></h5>
             <p class="card-text"><%= product.description%></p>
+            <p class="card-text">$<%= product.price%></p>
             <a href="/shop/<%= product.id%>" class="btn btn-primary">View</a>
 
 
 
 
             <% if cart.include?(product) %>
-              <%= button_to cart_path(product), method: :delete do%>
-              Remove from cart -
+              <%= button_to cart_path(product) , method: :delete, class: "btn btn-primary mt-2" do%>
+              - Remove from cart
               <% end %>
           <% else %>
               <%= form_with url: cart_index_path, method: :post do%>
                 <%= hidden_field_tag(:id, product.id) %>
-                <%= button_tag 'Add to Cart'%>
+                <%= button_tag '+ Add to Cart', class: "btn btn-primary mt-2"%>
               <% end %>
             <% end%>
           </div>

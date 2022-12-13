@@ -9,13 +9,13 @@
   <div class="row">
   <% @categories.each do |category| %>
     <div class="col">
-    <a href="/product/<%= category.id %>"><%= category.name %></a>
+    <a class="btn btn-outline-primary mb-5 mt-3" href="/product/<%= category.id %>"><%= category.name %></a>
     </div>
 
 
   <% end %>
   <div class="col">
-    <a href="/shop">Shop All</a>
+    <a href="/shop" class="btn btn-outline-primary mb-5 mt-3" >Shop All</a>
   </div>
 </div>
 </div>

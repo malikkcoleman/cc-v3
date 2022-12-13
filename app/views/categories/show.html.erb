@@ -10,9 +10,21 @@
 <div class="m-5">
   <h3><%= item.name%></h3>
   <p><%= item.description%></p>
-  <p><%= item.price %></p>
+  <p>$<%= item.price %></p>
   <p>QTY: <%= item.qty %></p>
-  <button style="text-align: center" type="button" class="btn btn-outline-primary">Add to Card</button>
+
+    <% if cart.include?(item) %>
+      <%= button_to cart_path(item) , method: :delete, class: "btn btn-primary mt-2" do%>
+      - Remove from cart
+      <% end %>
+    <% else %>
+      <%= form_with url: cart_index_path, method: :post do%>
+        <%= hidden_field_tag(:id, item.id) %>
+        <%= button_tag '+ Add to Cart', class: "btn btn-primary mt-2"%>
+      <% end %>
+    <% end%>
+  </div>
+</div>
 
 </div>
 </div>

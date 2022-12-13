@@ -13,13 +13,13 @@
   <body>
   <%= render 'layouts/navbar' %>
   <div class="container">
-    <ul>
-      <li>
-        Proceed to Checkout
-        <%= link_to "cart", "/order"%>
+    <ul style="list-style-type: none;">
+      <li class="link-secondary">
+      <i class="bi bi-cart"></i>
+        <%= link_to "Proceed to Checkout", "/order", class: "link-secondary"%>
         <% if cart.present? %>
           <sup><%= cart.size %></sup>
-          <ul>
+          <ul style="list-style-type: none;">
             <% cart.each do |p| %>
               <li>
                 <%= p.name%>
