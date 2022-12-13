@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get "product/:id", to: "products#index"
   get "/search", to: "categories#search"
   get "/order", to: "orders#index"
+  get "/about", to: "about#index"
+  get "/contact", to: "contact#index"
 
   post "order", to: "orders#create", as: "create_order"
 
